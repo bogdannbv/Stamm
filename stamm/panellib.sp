@@ -5,19 +5,19 @@
  * License     GPLv3
  * Web         http://popoklopsi.de
  * -----------------------------------------------------
- * 
+ *
  * Copyright (C) 2012-2014 David <popoklopsi> Ordnung
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>
  */
@@ -35,11 +35,11 @@ new Handle:panellib_credits;
 
 
 
-// Init. Panellib 
+// Init. Panellib
 panellib_Start()
 {
 	decl String:infoString[256];
-		
+
 
 	Format(g_sInfoF, sizeof(g_sInfoF), g_sInfo);
 	Format(g_sChangeF, sizeof(g_sChangeF), g_sChange);
@@ -54,15 +54,15 @@ panellib_Start()
 	{
 		ReplaceString(g_sInfoF, sizeof(g_sInfoF), "sm_", "!");
 	}
-	
-		
+
+
 	if (!StrContains(g_sChange, "sm_"))
 	{
 		ReplaceString(g_sChangeF, sizeof(g_sChangeF), "sm_", "!");
 	}
-	
+
 	// Register sadmin
-	if (!StrContains(g_sAdminMenu, "sm_")) 
+	if (!StrContains(g_sAdminMenu, "sm_"))
 	{
 		RegAdminCmd(g_sAdminMenu, panellib_OpenAdmin, ADMFLAG_CUSTOM6);
 	}
@@ -72,22 +72,22 @@ panellib_Start()
 	// Create new Panels
 	panellib_credits = CreatePanel();
 
-	
+
 	// Create Stamm Credits
 	SetPanelTitle(panellib_credits, "Stamm Credits");
-	
+
 	DrawPanelText(panellib_credits, "-------------------------------------------");
 	DrawPanelText(panellib_credits, "Author:     Popoklopsi");
-	
+
 	Format(infoString, sizeof(infoString), "Version:    %s", g_sPluginVersionUpdate);
 	DrawPanelText(panellib_credits, infoString);
 
 	DrawPanelText(panellib_credits, "Stamm Page: https://forums.alliedmods.net/showthread.php?t=142073");
 	DrawPanelText(panellib_credits, "-------------------------------------------");
-	
+
 	Format(infoString, sizeof(infoString), "%T", "Back", LANG_SERVER);
 	DrawPanelItem(panellib_credits, infoString);
-	
+
 	Format(infoString, sizeof(infoString), "%T", "Close", LANG_SERVER);
 	DrawPanelItem(panellib_credits, infoString);
 }
@@ -139,14 +139,14 @@ Handle:panellib_createInfoPanel(client)
 
 		// Now add points text
 		// If not highest level, calculate rest points
-		if (index != g_iLevels && index < g_iLevels) 
+		if (index != g_iLevels && index < g_iLevels)
 		{
 			restpoints = g_iLevelPoints[index] - g_iPlayerPoints[client];
 		}
 
 
 		// Highest level?
-		if (index != g_iLevels && index < g_iLevels) 
+		if (index != g_iLevels && index < g_iLevels)
 		{
 			if (!striptag)
 			{
@@ -158,7 +158,7 @@ Handle:panellib_createInfoPanel(client)
 			}
 		}
 		else
-		{ 
+		{
 			if (!striptag)
 			{
 				Format(infoString, sizeof(infoString), "%T", "VIPClientPlain", client, points, g_sLevelName[index-1], vip);
@@ -182,7 +182,7 @@ Handle:panellib_createInfoPanel(client)
 
 		Format(infoString, sizeof(infoString), "%T", "PointInfo", client);
 		DrawPanelText(panellib_info, infoString);
-		
+
 
 
 		// Add points information
@@ -190,7 +190,7 @@ Handle:panellib_createInfoPanel(client)
 		Format(infoString, sizeof(infoString), "1 %T", "Kill", client);
 
 
-		if (g_iVipType == 1 || g_iVipType == 4 || g_iVipType == 5 || g_iVipType == 7) 
+		if (g_iVipType == 1 || g_iVipType == 4 || g_iVipType == 5 || g_iVipType == 7)
 		{
 			DrawPanelText(panellib_info, infoString);
 		}
@@ -201,7 +201,7 @@ Handle:panellib_createInfoPanel(client)
 		Format(infoString, sizeof(infoString), "1 %T", "Round", client);
 
 
-		if (g_iVipType == 2 || g_iVipType == 4 || g_iVipType == 6 || g_iVipType == 7) 
+		if (g_iVipType == 2 || g_iVipType == 4 || g_iVipType == 6 || g_iVipType == 7)
 		{
 			DrawPanelText(panellib_info, infoString);
 		}
@@ -212,27 +212,27 @@ Handle:panellib_createInfoPanel(client)
 		Format(infoString, sizeof(infoString), "%i %T", g_iTimePoint, "Minute", client);
 
 
-		if (g_iVipType == 3 || g_iVipType == 5 || g_iVipType == 6 || g_iVipType == 7) 
+		if (g_iVipType == 3 || g_iVipType == 5 || g_iVipType == 6 || g_iVipType == 7)
 		{
 			DrawPanelText(panellib_info, infoString);
 		}
-			
+
 
 
 		DrawPanelText(panellib_info, "-------------------------------------------");
-		
+
 		Format(infoString, sizeof(infoString), "%T", "StammFeatures", client);
 		DrawPanelItem(panellib_info, infoString);
-		
+
 		Format(infoString, sizeof(infoString), "%T", "StammCMD", client);
 		DrawPanelItem(panellib_info, infoString);
-		
+
 		Format(infoString, sizeof(infoString), "%T", "AllLevels", client);
 		DrawPanelItem(panellib_info, infoString);
-		
+
 		DrawPanelItem(panellib_info, "Credits");
 		DrawPanelText(panellib_info, "-------------------------------------------");
-		
+
 		Format(infoString, sizeof(infoString), "%T", "Close", client);
 		DrawPanelItem(panellib_info, infoString);
 
@@ -255,7 +255,7 @@ Handle:panellib_createInfoPanel(client)
 public Action:panellib_OpenAdmin(client, args)
 {
 	// Only for valid clients
-	if (clientlib_isValidClient(client)) 
+	if (clientlib_isValidClient(client))
 	{
 		panellib_CreateUserPanels(client, 4);
 	}
@@ -272,7 +272,7 @@ public Action:panellib_OpenAdmin(client, args)
 public Action:panellib_ChangePanel(client, args)
 {
 	panellib_CreateUserPanels(client, 1);
-	
+
 	return Plugin_Handled;
 }
 
@@ -296,11 +296,11 @@ panellib_CreateUserPanels(client, mode)
 			new Handle:ChangeMenu = CreateMenu(panellib_ChangePanelHandler);
 			decl String:MenuItem[100];
 			decl String:index[10];
-			
+
 
 			SetMenuExitButton(ChangeMenu, true);
 			SetMenuTitle(ChangeMenu, "%T", "ChangeFeatures", client);
-			
+
 
 			// Loop through all features
 			for (new i=0; i < g_iFeatures; i++)
@@ -331,11 +331,11 @@ panellib_CreateUserPanels(client, mode)
 
 					// Text to enable or disable feature
 					if (g_FeatureList[i][WANT_FEATURE][client])
-					{ 
+					{
 						Format(MenuItem, sizeof(MenuItem), "%T", "FeatureOn", client, g_FeatureList[i][FEATURE_NAME]);
 					}
 					else
-					{ 
+					{
 						Format(MenuItem, sizeof(MenuItem), "%T", "FeatureOff", client, g_FeatureList[i][FEATURE_NAME]);
 					}
 
@@ -343,7 +343,7 @@ panellib_CreateUserPanels(client, mode)
 
 					// Save index and add
 					Format(index, sizeof(index), "%i", i);
-					
+
 					AddMenuItem(ChangeMenu, index, MenuItem);
 				}
 			}
@@ -370,14 +370,14 @@ panellib_CreateUserPanels(client, mode)
 
 
 	// Open info handler
-	if (mode == 3) 
+	if (mode == 3)
 	{
 		SendPanelToClient(panellib_createInfoPanel(client), client, panellib_InfoHandler, 40);
 	}
 
 
 	// Open Admin menu
-	if (mode == 4) 
+	if (mode == 4)
 	{
 		new Handle:panellib_adminpanel = CreatePanel();
 		decl String:infoString[256];
@@ -385,29 +385,29 @@ panellib_CreateUserPanels(client, mode)
 		// Create Admin Menu
 		Format(infoString, sizeof(infoString), "%T", "AdminMenu", client);
 		SetPanelTitle(panellib_adminpanel, infoString);
-		
+
 		DrawPanelText(panellib_adminpanel, "----------------------------------------------------");
-		
+
 		Format(infoString, sizeof(infoString), "%T", "PointsOfPlayer", client);
 		DrawPanelItem(panellib_adminpanel, infoString);
-		
+
 		Format(infoString, sizeof(infoString), "%T", "ResetPlayer", client);
 		DrawPanelItem(panellib_adminpanel, infoString);
-		
+
 		Format(infoString, sizeof(infoString), "%T", "HappyHour", client);
 		DrawPanelItem(panellib_adminpanel, infoString);
-		
+
 		Format(infoString, sizeof(infoString), "%T", "HappyHourEnd", client);
 		DrawPanelItem(panellib_adminpanel, infoString);
-		
+
 		Format(infoString, sizeof(infoString), "%T", "LoadFeature", client);
 		DrawPanelItem(panellib_adminpanel, infoString);
-		
+
 		Format(infoString, sizeof(infoString), "%T", "UnloadFeature", client);
 		DrawPanelItem(panellib_adminpanel, infoString);
-		
+
 		DrawPanelText(panellib_adminpanel, "----------------------------------------------------");
-		
+
 		Format(infoString, sizeof(infoString), "%T", "Close", client);
 		DrawPanelItem(panellib_adminpanel, infoString);
 
@@ -423,7 +423,7 @@ panellib_CreateUserPanels(client, mode)
 public Action:panellib_InfoPanel(client, args)
 {
 	// Open it for valid users
-	if (clientlib_isValidClient(client)) 
+	if (clientlib_isValidClient(client))
 	{
 		panellib_CreateUserPanels(client, 3);
 	}
@@ -445,7 +445,7 @@ public panellib_ChangePanelHandler(Handle:menu, MenuAction:action, param1, param
 		{
 			decl String:ChangeChoose[64];
 			new index;
-			
+
 
 
 			// Get selected item
@@ -453,10 +453,10 @@ public panellib_ChangePanelHandler(Handle:menu, MenuAction:action, param1, param
 
 			// Get the index
 			index = StringToInt(ChangeChoose);
-			
+
 			// Just set to opposite
 			g_FeatureList[index][WANT_FEATURE][param1] = !g_FeatureList[index][WANT_FEATURE][param1];
-			
+
 
 
 			// Only if enabled
@@ -472,7 +472,7 @@ public panellib_ChangePanelHandler(Handle:menu, MenuAction:action, param1, param
 		}
 	}
 
-	else if (action == MenuAction_End) 
+	else if (action == MenuAction_End)
 	{
 		// destroy menu
 		CloseHandle(menu);
@@ -491,10 +491,10 @@ public panellib_FeaturelistLoadHandler(Handle:menu, MenuAction:action, param1, p
 	if (action == MenuAction_Select)
 	{
 		decl String:choose[12];
-		
+
 		// Get selected and load it
 		GetMenuItem(menu, param2, choose, sizeof(choose));
-		
+
 		featurelib_loadFeature(g_FeatureList[StringToInt(choose)][FEATURE_HANDLE]);
 
 		panellib_AdminHandler(INVALID_HANDLE, MenuAction_Select, param1, 5);
@@ -506,7 +506,7 @@ public panellib_FeaturelistLoadHandler(Handle:menu, MenuAction:action, param1, p
 	}
 
 	// Stop menu
-	else if (action == MenuAction_End) 
+	else if (action == MenuAction_End)
 	{
 		CloseHandle(menu);
 	}
@@ -523,10 +523,10 @@ public panellib_FeaturelistUnloadHandler(Handle:menu, MenuAction:action, param1,
 	if (action == MenuAction_Select)
 	{
 		decl String:choose[12];
-		
+
 		// Get item and unload
 		GetMenuItem(menu, param2, choose, sizeof(choose));
-		
+
 		featurelib_UnloadFeature(g_FeatureList[StringToInt(choose)][FEATURE_HANDLE]);
 
 		panellib_AdminHandler(INVALID_HANDLE, MenuAction_Select, param1, 6);
@@ -538,7 +538,7 @@ public panellib_FeaturelistUnloadHandler(Handle:menu, MenuAction:action, param1,
 	}
 
 	// Close
-	else if (action == MenuAction_End) 
+	else if (action == MenuAction_End)
 	{
 		CloseHandle(menu);
 	}
@@ -555,7 +555,7 @@ public panellib_PanelHandler(Handle:menu, MenuAction:action, param1, param2)
 {
 	if (action == MenuAction_Select)
 	{
-		if ((param2 == 1 || param2 == 2) && clientlib_isValidClient(param1)) 
+		if ((param2 == 1 || param2 == 2) && clientlib_isValidClient(param1))
 		{
 			SendPanelToClient(panellib_createInfoPanel(param1), param1, panellib_InfoHandler, 40);
 		}
@@ -569,7 +569,7 @@ public panellib_PanelHandler(Handle:menu, MenuAction:action, param1, param2)
 
 
 // Just a pass panel handler for back button
-public panellib_LevelHandler(Handle:menu, MenuAction:action, param1, param2) 
+public panellib_LevelHandler(Handle:menu, MenuAction:action, param1, param2)
 {
 	if (action == MenuAction_Cancel)
 	{
@@ -581,7 +581,7 @@ public panellib_LevelHandler(Handle:menu, MenuAction:action, param1, param2)
 		}
 	}
 
-	else if (action == MenuAction_End) 
+	else if (action == MenuAction_End)
 	{
 		// Close
 		CloseHandle(menu);
@@ -597,18 +597,18 @@ public panellib_LevelHandler(Handle:menu, MenuAction:action, param1, param2)
 // Add Points to a player
 public panellib_PlayerListHandler(Handle:menu, MenuAction:action, param1, param2)
 {
-	if (action == MenuAction_Select) 
+	if (action == MenuAction_Select)
 	{
 		decl String:menuinfo[32];
-		
+
 		// get player
 		GetMenuItem(menu, param2, menuinfo, sizeof(menuinfo));
-		
+
 		new client = StringToInt(menuinfo);
-		
+
 		// Valid user
 		if (clientlib_isValidClient(param1) && clientlib_isValidClient(client))
-		{	
+		{
 			// Client should write points to add
 			g_iPointsNumber[param1] = client;
 
@@ -631,7 +631,7 @@ public panellib_PlayerListHandler(Handle:menu, MenuAction:action, param1, param2
 		panellib_CreateUserPanels(param1, 4);
 	}
 
-	else if (action == MenuAction_End) 
+	else if (action == MenuAction_End)
 	{
 		// Close
 		CloseHandle(menu);
@@ -647,20 +647,20 @@ public panellib_PlayerListHandler(Handle:menu, MenuAction:action, param1, param2
 // Delete a player
 public panellib_PlayerListHandlerDelete(Handle:menu, MenuAction:action, param1, param2)
 {
-	if (action == MenuAction_Select) 
+	if (action == MenuAction_Select)
 	{
 		decl String:query[256];
 		decl String:menuinfo[32];
 		decl String:name[MAX_NAME_LENGTH+1];
 		decl String:steamid[64];
-	
+
 
 
 		// get player to delete
 		GetMenuItem(menu, param2, menuinfo, sizeof(menuinfo));
-		
+
 		new client = StringToInt(menuinfo);
-		
+
 
 
 		// Must be valid
@@ -669,7 +669,7 @@ public panellib_PlayerListHandlerDelete(Handle:menu, MenuAction:action, param1, 
 			// Get the name and steamid
 			GetClientName(client, name, sizeof(name));
 			clientlib_getSteamid(client, steamid, sizeof(steamid));
-			
+
 
 			if (!g_bMoreColors)
 			{
@@ -680,9 +680,9 @@ public panellib_PlayerListHandlerDelete(Handle:menu, MenuAction:action, param1, 
 				MCPrintToChat(param1, "%s %t", g_sStammTag, "DeletedPoints", name);
 			}
 
-			
+
 			// Print to deleted client, 3 TIMES :o
-			for (new i=0; i<3; i++) 
+			for (new i=0; i<3; i++)
 			{
 				if (!g_bMoreColors)
 				{
@@ -697,11 +697,11 @@ public panellib_PlayerListHandlerDelete(Handle:menu, MenuAction:action, param1, 
 
 			// Set level and points to zero
 			g_iPlayerPoints[client] = 0;
-					
-			
+
+
 			// Update in database
 			Format(query, sizeof(query), g_sUpdateSetPointsZeroQuery, g_sTableName, steamid);
-			
+
 			SQL_TQuery(sqllib_db, sqllib_SQLErrorCheckCallback, query);
 
 
@@ -740,7 +740,7 @@ public panellib_FeatureHandler(Handle:menu, MenuAction:action, param1, param2)
 		}
 	}
 
-	else if (action == MenuAction_End) 
+	else if (action == MenuAction_End)
 	{
 		// close
 		CloseHandle(menu);
@@ -779,7 +779,7 @@ public panellib_CmdlistHandler(Handle:menu, MenuAction:action, param1, param2)
 
 
 	// Close
-	if (action == MenuAction_End) 
+	if (action == MenuAction_End)
 	{
 		CloseHandle(menu);
 	}
@@ -797,18 +797,18 @@ public panellib_InfoHandler(Handle:menu, MenuAction:action, param1, param2)
 	{
 		if (clientlib_isValidClient(param1))
 		{
-			if (param2 == 4) 
+			if (param2 == 4)
 			{
 				// Credits
 				SendPanelToClient(panellib_credits, param1, panellib_PanelHandler, 20);
 			}
 
 			else if (param2 == 3)
-			{ 
+			{
 				// Open level overview
 				new Handle:panellib_levels = CreateMenu(panellib_LevelHandler);
 				decl String:infoString[256];
-				
+
 				// Create Level Overview
 				Format(infoString, sizeof(infoString), "%T", "AllLevels", param1);
 
@@ -836,7 +836,7 @@ public panellib_InfoHandler(Handle:menu, MenuAction:action, param1, param2)
 				DisplayMenu(panellib_levels, param1, 30);
 			}
 
-			else if (param2 == 2) 
+			else if (param2 == 2)
 			{
 				// Open command list menu
 				new Handle:cmdlist = CreateMenu(panellib_CmdlistHandler);
@@ -856,7 +856,7 @@ public panellib_InfoHandler(Handle:menu, MenuAction:action, param1, param2)
 				// Add all commands
 				for (new i=0; i < g_iCommands; i++)
 				{
-					// Add command			
+					// Add command
 					Format(infoString, sizeof(infoString), "%s %s", g_sCommandName[i], g_sCommand[i]);
 
 					AddMenuItem(cmdlist, g_sCommand[i], infoString);
@@ -873,13 +873,13 @@ public panellib_InfoHandler(Handle:menu, MenuAction:action, param1, param2)
 				decl String:featureid[10];
 				new bool:foundFeature = false;
 				new Handle:featurelist = CreateMenu(panellib_FeatureListHandler);
-				
+
 
 
 				// title and exit button
 				SetMenuTitle(featurelist, "%T", "HaveFeatures", param1);
 				SetMenuExitBackButton(featurelist, true);
-				
+
 
 				// Loop through levels
 				for (new i=0; i < g_iLevels+g_iPLevels; i++)
@@ -925,7 +925,7 @@ public panellib_InfoHandler(Handle:menu, MenuAction:action, param1, param2)
 
 							// Add level
 							Format(featureid, sizeof(featureid), "%i", i+1);
-							
+
 							AddMenuItem(featurelist, featureid, g_sLevelName[i]);
 
 
@@ -934,7 +934,7 @@ public panellib_InfoHandler(Handle:menu, MenuAction:action, param1, param2)
 						}
 					}
 				}
-				
+
 
 
 				// Send
@@ -960,16 +960,16 @@ public panellib_FeatureListHandler(Handle:menu, MenuAction:action, param1, param
 		decl String:arrayItem[128];
 
 		GetMenuItem(menu, param2, Chooseit, sizeof(Chooseit));
-		
+
 
 
 		// Get level
 		new id = StringToInt(Chooseit);
 		new Handle:featurelist = CreateMenu(panellib_FeatureHandler);
-		
+
 		SetMenuTitle(featurelist, "%T", "HaveFeatures", param1);
 		SetMenuExitBackButton(featurelist, true);
-		
+
 
 		// Loop through all features
 		for (new i=0; i < g_iFeatures; i++)
@@ -1009,7 +1009,7 @@ public panellib_FeatureListHandler(Handle:menu, MenuAction:action, param1, param
 
 						// Add text
 						Format(featuretext, sizeof(featuretext), "%s", arrayItem);
-						
+
 						AddMenuItem(featurelist, "", featuretext, ITEMDRAW_DISABLED);
 					}
 
@@ -1018,7 +1018,7 @@ public panellib_FeatureListHandler(Handle:menu, MenuAction:action, param1, param
 				}
 			}
 		}
-		
+
 
 
 		// Display menu
@@ -1036,7 +1036,7 @@ public panellib_FeatureListHandler(Handle:menu, MenuAction:action, param1, param
 
 
 	// Close
-	if (action == MenuAction_End) 
+	if (action == MenuAction_End)
 	{
 		CloseHandle(menu);
 	}
@@ -1057,21 +1057,21 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 		if (clientlib_isValidClient(param1))
 		{
 			decl String:Chooseit[128];
-			
+
 			new Handle:playerlist;
 			new Handle:featurelist;
-			
+
 			// Choose a player
 			Format(Chooseit, sizeof(Chooseit), "%T", "ChoosePlayer", param1);
-			
+
 
 
 			// Delete or add points
-			if (param2 == 1) 
+			if (param2 == 1)
 			{
 				playerlist = CreateMenu(panellib_PlayerListHandler);
 			}
-			else if (param2 == 2) 
+			else if (param2 == 2)
 			{
 				playerlist = CreateMenu(panellib_PlayerListHandlerDelete);
 			}
@@ -1082,9 +1082,9 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 			{
 				decl String:clientname[MAX_NAME_LENGTH + 1];
 				decl String:clientString[6];
-						
+
 				SetMenuTitle(playerlist, Chooseit);
-				
+
 				// Client loop
 				for (new i = 1; i <= MaxClients; i++)
 				{
@@ -1093,9 +1093,9 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 					{
 						// Add client
 						Format(clientString, sizeof(clientString), "%i", i);
-						
+
 						GetClientName(i, clientname, sizeof(clientname));
-						
+
 						AddMenuItem(playerlist, clientString, clientname);
 					}
 				}
@@ -1107,14 +1107,14 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 
 			// Start happy hour
 			if (param2 == 3)
-			{	
+			{
 				// Only when not running
-				if (!g_bHappyHourON) 
+				if (!g_bHappyHourON)
 				{
 					otherlib_MakeHappyHour(param1);
 				}
 
-				else if (g_bHappyHourON) 
+				else if (g_bHappyHourON)
 				{
 					if (!g_bMoreColors)
 					{
@@ -1133,14 +1133,14 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 
 			// stopp happy hour
 			if (param2 == 4)
-			{	
+			{
 				// Only if running
 				if (g_bHappyHourON)
-				{ 
+				{
 					otherlib_EndHappyHour();
 				}
 
-				else if (!g_bHappyHourON) 
+				else if (!g_bHappyHourON)
 				{
 					if (!g_bMoreColors)
 					{
@@ -1159,11 +1159,11 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 
 			// Load or unload feature
 			if (param2 == 5 || param2 == 6)
-			{	
+			{
 				decl String:itemString[12];
 
 				new bool:found = false;
-				
+
 				// Load
 				if (param2 == 5)
 				{
@@ -1180,7 +1180,7 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 
 				Format(Chooseit, sizeof(Chooseit), "%T", "ChooseFeature", param1);
 				SetMenuTitle(featurelist, Chooseit);
-				
+
 
 
 				// Feature loop
@@ -1189,25 +1189,25 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 					// Check enable or disabled
 					if ((!g_FeatureList[i][FEATURE_ENABLE] && param2 == 5) || (g_FeatureList[i][FEATURE_ENABLE] && param2 == 6))
 					{
-						// ADD 
+						// ADD
 						Format(itemString, sizeof(itemString), "%i", i);
 						AddMenuItem(featurelist, itemString, g_FeatureList[i][FEATURE_NAME]);
-						
-						
+
+
 						// Check found
 						found = true;
 					}
 				}
-				
+
 
 
 				// If found open
-				if (found) 
+				if (found)
 				{
 					DisplayMenu(featurelist, param1, MENU_TIME_FOREVER);
 				}
 				else
-				{ 
+				{
 					if (!g_bMoreColors)
 					{
 						CPrintToChat(param1, "%s %t", g_sStammTag, "NoFeatureFound");
@@ -1224,7 +1224,7 @@ public panellib_AdminHandler(Handle:menu, MenuAction:action, param1, param2)
 	}
 
 	// Close
-	if (action == MenuAction_End) 
+	if (action == MenuAction_End)
 	{
 		CloseHandle(menu);
 	}
