@@ -22,8 +22,8 @@
 	}
 	"Points"
 	{
-		"en"        "Stamm Points"
-		"de"        "Stamm Punkte"
+		"en"        "Points"
+		"de"        "Punkte"
 	}
 	"Flag"
 	{
@@ -37,32 +37,32 @@
 	}
 	"PointInfo"
 	{
-		"en"        "You get 1 Stamm Point with:"
-		"de"        "Du bekommst 1 Stamm Punkt mit:"
+		"en"        "You get 1 Point with:"
+		"de"        "Du bekommst 1 Punkt mit:"
 	}
 	"NewPointsKill"
 	{
 		"#format"   "{1:i}"
-		"en"        "You got {green}{1} Stamm Point/s for {lightgreen}killing a player"
-		"de"        "Du hast {green}{1} Stamm Punkt/e für {lightgreen}das Töten eines Spielers erhalten"
+		"en"        "You got {green}{1} Point/s for {lightgreen}killing a player"
+		"de"        "Du hast {green}{1} Punkt/e für {lightgreen}das Töten eines Spielers erhalten"
 	}
 	"NewPointsRound"
 	{
 		"#format"   "{1:i}"
-		"en"        "You got {green}{1} Stamm Point/s for {lightgreen}a new round"
-		"de"        "Du hast {green}{1} Stamm Punkt/e für {lightgreen}eine neue Runde erhalten"
+		"en"        "You got {green}{1} Point/s for {lightgreen}a new round"
+		"de"        "Du hast {green}{1} Punkt/e für {lightgreen}eine neue Runde erhalten"
 	}
 	"NewPointsTime"
 	{
 		"#format"   "{1:i},{2:i}"
-		"en"        "You got {green}{1} Stamm Point/s for {lightgreen}playing {2} minute/s"
-		"de"        "Du hast {green}{1} Stamm Punkt/e für {lightgreen}das Spielen von {2} Minute/n erhalten"
+		"en"        "You got {green}{1} Point/s for {lightgreen}playing {2} minute/s"
+		"de"        "Du hast {green}{1} Punkt/e für {lightgreen}das Spielen von {2} Minute/n erhalten"
 	}
 	"InfoTyp"
 	{
 		"#format"   "{1:s}"
-		"en"        "is enabled, {green}type {1} {lightgreen}to see your {green}current Stamm Points"
-		"de"        "ist aktiviert, {green}schreibe {1} {lightgreen}um deine {green}aktuellen Stamm Punkte {lightgreen}zu sehen"
+		"en"        "is enabled, {green}type {1} {lightgreen}to see your {green}current Points"
+		"de"        "ist aktiviert, {green}schreibe {1} {lightgreen}um deine {green}aktuellen Punkte {lightgreen}zu sehen"
 	}
 	"InfoTypInfo"
 	{
@@ -73,13 +73,13 @@
 	"DeletedPoints"
 	{
 		"#format"   "{1:s}"
-		"en"        "Stamm Points {green}of {1} {lightgreen}deleted!"
-		"de"        "Stamm Punkte {green}von {1} {lightgreen}wurden gelöscht!"
+		"en"        "Points {green}of {1} {lightgreen}deleted!"
+		"de"        "Punkte {green}von {1} {lightgreen}wurden gelöscht!"
 	}
 	"YourDeletedPoints"
 	{
-		"en"        "Your Stamm Points {green}were reseted!!"
-		"de"        "Deine Stamm Punkte {green}wurden zurückgesetzt!"
+		"en"        "Your Points {green}were reseted!!"
+		"de"        "Deine Punkte {green}wurden zurückgesetzt!"
 	}
 	"AllLevels"
 	{
@@ -104,62 +104,62 @@
 	"Rank"
 	{
 		"#format"   "{1:i},{2:i}"
-		"en"        "You are on {green}{1}. Place{lightgreen} with {green}{2} Stamm Points"
-		"de"        "Du bist auf dem {green}{1}. Platz{lightgreen} mit {green}{2} Stamm Punkten"
+		"en"        "You are on {green}{1}. Place{lightgreen} with {green}{2} Points"
+		"de"        "Du bist auf dem {green}{1}. Platz{lightgreen} mit {green}{2} Punkten"
 	}
 	"NoVIPClient"
 	{
 		"#format"   "{1:i},{2:i},{3:s},{4:s}"
-		"en"        "You have {green}{1} Stamm Points{lightgreen}, you need still{green} {2} points {lightgreen}to become {3}{4}"
-		"de"        "Du hast {green}{1} Stamm Punkte{lightgreen}, du brauchst noch{green} {2} Punkte {lightgreen}um {3}{4} zu werden"
+		"en"        "You have {green}{1} Points{lightgreen}, you need still{green} {2} points {lightgreen}to become {3}{4}"
+		"de"        "Du hast {green}{1} Punkte{lightgreen}, du brauchst noch{green} {2} Punkte {lightgreen}um {3}{4} zu werden"
 	}
 	"VIPClient"
 	{
 		"#format"   "{1:i},{2:s},{3:s}"
-		"en"        "You have {green}{1} Stamm Points{lightgreen}, you are {2}{3}"
-		"de"        "Du hast {green}{1} Stamm Punkte{lightgreen}, du bist {2}{3}"
+		"en"        "You have {green}{1} Points{lightgreen}, you are {2}{3}"
+		"de"        "Du hast {green}{1} Punkte{lightgreen}, du bist {2}{3}"
 	}
 	"NoVIPClientPlain"
 	{
 		"#format"   "{1:i},{2:i},{3:s},{4:s}"
-		"en"        "You have {1} Stamm Points, you need still {2} points to become {3}{4}"
-		"de"        "Du hast {1} Stamm Punkte, du brauchst noch {2} Punkte um {3}{4} zu werden"
+		"en"        "You have {1} Points, you need still {2} points to become {3}{4}"
+		"de"        "Du hast {1} Punkte, du brauchst noch {2} Punkte um {3}{4} zu werden"
 	}
 	"VIPClientPlain"
 	{
 		"#format"   "{1:i},{2:s},{3:s}"
-		"en"        "You have {1} Stamm Points, you are {2}{3}"
-		"de"        "Du hast {1} Stamm Punkte, du bist {2}{3}"
+		"en"        "You have {1} Points, you are {2}{3}"
+		"de"        "Du hast {1} Punkte, du bist {2}{3}"
 	}
 	"NoVIPAll"
 	{
 		"#format"   "{1:s},{2:i},{3:i},{4:s},{5:s}"
-		"en"        "{green}{1} {lightgreen}has {green}{2} Stamm Points{lightgreen}, he needs still{green} {3} points {lightgreen}to become {4}{5}"
-		"de"        "{green}{1} {lightgreen}hat {green}{2} Stamm Punkte{lightgreen}, er braucht noch{green} {3} Punkte {lightgreen}um {4}{5} zu werden"
+		"en"        "{green}{1} {lightgreen}has {green}{2} Points{lightgreen}, he needs still{green} {3} points {lightgreen}to become {4}{5}"
+		"de"        "{green}{1} {lightgreen}hat {green}{2} Punkte{lightgreen}, er braucht noch{green} {3} Punkte {lightgreen}um {4}{5} zu werden"
 	}
 	"VIPAll"
 	{
 		"#format"   "{1:s},{2:i},{3:s},{4:s}"
-		"en"        "{green}{1} {lightgreen}has {green}{2} Stamm Points{lightgreen}, he's {3}{4}"
-		"de"        "{green}{1} {lightgreen}hat {green}{2} Stamm Punkte{lightgreen}, er ist {3}{4}"
+		"en"        "{green}{1} {lightgreen}has {green}{2} Points{lightgreen}, he's {3}{4}"
+		"de"        "{green}{1} {lightgreen}hat {green}{2} Punkte{lightgreen}, er ist {3}{4}"
 	}
 	"VIPClientZero"
 	{
 		"#format"   "{1:i}"
-		"en"        "You have {green}{1} Stamm Points{lightgreen}"
-		"de"        "Du hast {green}{1} Stamm Punkte{lightgreen}"
+		"en"        "You have {green}{1} Points{lightgreen}"
+		"de"        "Du hast {green}{1} Punkte{lightgreen}"
 	}
 	"VIPClientPlainZero"
 	{
 		"#format"   "{1:i}"
-		"en"        "You have {1} Stamm Points"
-		"de"        "Du hast {1} Stamm Punkte"
+		"en"        "You have {1} Points"
+		"de"        "Du hast {1} Punkte"
 	}
 	"VIPAllZero"
 	{
 		"#format"   "{1:s},{2:i}"
-		"en"        "{green}{1} {lightgreen}has {green}{2} Stamm Points{lightgreen}"
-		"de"        "{green}{1} {lightgreen}hat {green}{2} Stamm Punkte{lightgreen}"
+		"en"        "{green}{1} {lightgreen}has {green}{2} Points{lightgreen}"
+		"de"        "{green}{1} {lightgreen}hat {green}{2} Punkte{lightgreen}"
 	}
 	"LevelNowVIP"
 	{
@@ -180,8 +180,8 @@
 	}
 	"StammPoints"
 	{
-		"en"        "Your Stamm Points:"
-		"de"        "Deine Stamm Punkte:"
+		"en"        "Your Points:"
+		"de"        "Deine Punkte:"
 	}
 	"StammTop"
 	{
@@ -242,8 +242,8 @@
 	}
 	"PointsOfPlayer"
 	{
-		"en"        "Add Stamm Points to a player"
-		"de"        "Stamm Punkte einem Spieler hinzufügen"
+		"en"        "Add Points to a player"
+		"de"        "Punkte einem Spieler hinzufügen"
 	}
 	"StammCMD"
 	{
@@ -257,8 +257,8 @@
 	}
 	"ResetPlayer"
 	{
-		"en"        "Reset Stamm Points of a player"
-		"de"        "Spieler Stamm Punkte zurücksetzen"
+		"en"        "Reset Points of a player"
+		"de"        "Spieler Punkte zurücksetzen"
 	}
 	"HappyHour"
 	{
@@ -272,8 +272,8 @@
 	}
 	"WritePoints"
 	{
-		"en"        "Write now{green} the number of Stamm Points {lightgreen}to add {green}in your chat"
-		"de"        "Schreibe nun{green} die Anzahl der Stamm Punkte {lightgreen}zum addieren {green}in deinen Chat"
+		"en"        "Write now{green} the number of Points {lightgreen}to add {green}in your chat"
+		"de"        "Schreibe nun{green} die Anzahl der Punkte {lightgreen}zum addieren {green}in deinen Chat"
 	}
 	"WritePointsInfo"
 	{
@@ -283,14 +283,14 @@
 	"SetPoints"
 	{
 		"#format"   "{1:s},{2:i}"
-		"en"        "Stamm Points of {green}{1} {lightgreen}were set to {green}{2}"
-		"de"        "Stamm Punkte von {green}{1} {lightgreen}wurden auf: {green}{2} {lightgreen}gesetzt"
+		"en"        "Points of {green}{1} {lightgreen}were set to {green}{2}"
+		"de"        "Punkte von {green}{1} {lightgreen}wurden auf: {green}{2} {lightgreen}gesetzt"
 	}
 	"SetPoints2"
 	{
 		"#format"   "{1:i}"
-		"en"        "{green}Your Stamm Points {lightgreen}were set to {green}{1}"
-		"de"        "{green}Deine Stamm Punkte {lightgreen}wurden auf {green}{1} {lightgreen}gesetzt!"
+		"en"        "{green}Your Points {lightgreen}were set to {green}{1}"
+		"de"        "{green}Deine Punkte {lightgreen}wurden auf {green}{1} {lightgreen}gesetzt!"
 	}
 	"WriteHappyFactor"
 	{
@@ -325,8 +325,8 @@
 	"HappyActive"
 	{
 		"#format"   "{1:i}"
-		"en"        "Currently {green}Happy Hour {lightgreen}is active. Everyone gets now {green}{1}x more Stamm Points"
-		"de"        "Zurzeit ist {green}Happy Hour {lightgreen}aktiv. Jeder bekommt jetzt {green}{1}x mehr Stamm Punkte"
+		"en"        "Currently {green}Happy Hour {lightgreen}is active. Everyone gets now {green}{1}x more Points"
+		"de"        "Zurzeit ist {green}Happy Hour {lightgreen}aktiv. Jeder bekommt jetzt {green}{1}x mehr Punkte"
 	}
 	"HappyEnded"
 	{
