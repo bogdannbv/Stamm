@@ -130,7 +130,7 @@ Handle:panellib_createInfoPanel(client)
 		panellib_info = CreatePanel();
 
 		// Create Main info Panel
-		SetPanelTitle(panellib_info, "Stamm by Popoklopsi");
+		SetPanelTitle(panellib_info, "VIP System");
 
 		// Split Line
 		DrawPanelText(panellib_info, "-------------------------------------------");
