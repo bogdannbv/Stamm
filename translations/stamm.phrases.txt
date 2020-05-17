@@ -98,7 +98,7 @@
 	}
 	"NoRanks"
 	{
-		"en"        "No Stamm Players {lightgreen}were found"
+		"en"        "No VIP Players {lightgreen}were found"
 		"de"        "{green}Es wurden {lightgreen}keine Spieler {green}gefunden!"
 	}
 	"Rank"
@@ -185,13 +185,13 @@
 	}
 	"StammTop"
 	{
-		"en"        "Stamm Top 10:"
-		"de"        "Stamm Top 10:"
+		"en"        "VIP Top 10:"
+		"de"        "VIP Top 10:"
 	}
 	"StammRank"
 	{
-		"en"        "Your Stamm Rank:"
-		"de"        "Dein Stamm Rank:"
+		"en"        "Your VIP Rank:"
+		"de"        "Dein VIP Rank:"
 	}
 	"StammChange"
 	{
@@ -247,13 +247,13 @@
 	}
 	"StammCMD"
 	{
-		"en"        "Stamm Commands"
-		"de"        "Stamm Befehle"
+		"en"        "Commands"
+		"de"        "Befehle"
 	}
 	"StammFeatures"
 	{
-		"en"        "Stamm Features"
-		"de"        "Stamm Features"
+		"en"        "Features"
+		"de"        "Features"
 	}
 	"ResetPlayer"
 	{
